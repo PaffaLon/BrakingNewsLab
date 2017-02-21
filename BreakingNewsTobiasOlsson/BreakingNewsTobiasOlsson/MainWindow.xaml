@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525"
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
-        WindowStyle="None">
+        >
 
     <Grid x:Name="WindowGrid">
         <Grid x:Name="OuterGridPositioning" Margin="20,20,23.4,20.8">
@@ -37,11 +37,11 @@
                                 <RowDefinition/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" VerticalAlignment="Top" Height="20" Padding="0,0,0,0" Content="Keyword search settings"/>
-                            <RadioButton x:Name="rbtnTrmup"   Grid.Row="1" VerticalAlignment="Center" Content="Trump"/>
-                            <RadioButton x:Name="rbtnEconomy" Grid.Row="2" VerticalAlignment="Center" Content="Ekonomi"/>
-                            <RadioButton x:Name="rbtnCop"     Grid.Row="3" VerticalAlignment="Center" Content="Polis"/>
-                            <RadioButton x:Name="rbtnSecret"  Grid.Row="4" VerticalAlignment="Center" Content="Hemlig"/>
+                            <Label Grid.Row="0" VerticalAlignment="Top" Height="20" Padding="0,0,0,0" Content="Search options"/>
+                            <RadioButton x:Name="rbtnTrmup"   Grid.Row="1" VerticalAlignment="Center" Content="Trump"   Click="rbtn_Click" />
+                            <RadioButton x:Name="rbtnEconomy" Grid.Row="2" VerticalAlignment="Center" Content="Ekonomi" Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnCop"     Grid.Row="3" VerticalAlignment="Center" Content="Polis"   Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnSecret"  Grid.Row="4" VerticalAlignment="Center" Content="Hemlig"  Click="rbtn_Click"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
@@ -57,10 +57,10 @@
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" VerticalAlignment="Top" Height="20" Padding="0,0,0,0" Content="Keyword search settings"/>
-                            <RadioButton x:Name="rbtnAftonbladet" Grid.Row="1" VerticalAlignment="Center" Content="Aftonbladet"/>
-                            <RadioButton x:Name="rbtnExpressen"   Grid.Row="2" VerticalAlignment="Center" Content="Expressen"/>
-                            <RadioButton x:Name="DagensNyheter"   Grid.Row="3" VerticalAlignment="Center" Content="Dagens Nyheter"/>
+                            <Label Grid.Row="0" VerticalAlignment="Top" Height="20" Padding="0,0,0,0" Content="Newspaper"/>
+                            <RadioButton x:Name="rbtnAftonbladet" Grid.Row="1" VerticalAlignment="Center" Content="Aftonbladet"    Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnExpressen"   Grid.Row="2" VerticalAlignment="Center" Content="Expressen"      Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnDagensNyheter"   Grid.Row="3" VerticalAlignment="Center" Content="Dagens Nyheter" Click="rbtn_Click"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
@@ -69,7 +69,7 @@
             <!-- 
                                        >>>> Lower Style Section <<<<
             -->
-            <Grid Grid.Row="1" Margin="117,155,120,10.2">
+            <Grid Margin="10,121.4,10,10.2" d:LayoutOverrides="VerticalAlignment">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"/>
                     <RowDefinition Height="1*"/>
@@ -87,7 +87,7 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <Label x:Name="lblResult" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Result"/>
-                    <TextBox x:Name="txtResult" Grid.Row="1" Width="Auto" Height="Auto" BorderThickness="1,1,0,0" BorderBrush="#000" Background="#CA944E" />
+                    <TextBox x:Name="txtResult" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="Auto" BorderThickness="1,1,0,0" BorderBrush="#000" Background="#CA944E" />
                 </Grid>
             </Grid>
         </Grid>
