@@ -120,22 +120,5 @@ namespace BreakingNewsTobiasOlsson
             #endregion else if
             // System.Diagnostics.Process.Start(url);
         }
-
-        private void txtResult_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtResult.Text.ToString()))
-            {
-                txtResult.Background = Brushes.Red;
-            }
-            else
-            {
-                txtResult.Background = Brushes.Gainsboro;
-            }
-        }
-
-        private void txtResult_TextInput(object sender, TextCompositionEventArgs e)
-        {
-            lblStatusBarNr.Content = GlobalVariabels.StatusBarNr;
-        }
     }
 }

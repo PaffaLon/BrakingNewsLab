@@ -85,7 +85,7 @@
 
                 <!-- Button Grid -->
                 <Grid x:Name="NavBar" Width="Auto" Height="Auto" Grid.Row="0">
-                    <Button x:Name="btnStatitics" Width="Auto" Height="auto" MaxHeight="30" Content="Get Statisics" Click="btnStatitics_Click"/>
+                    <Button x:Name="btnStatitics" Width="Auto" Height="auto" MaxHeight="30" Content="Get Statisics"/>
                     <Grid x:Name="ResultBox" Height="69.9" Margin="0,0,0,-69.9" VerticalAlignment="Bottom">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30*"/>
