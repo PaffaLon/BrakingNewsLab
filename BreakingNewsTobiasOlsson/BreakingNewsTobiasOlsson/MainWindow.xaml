@@ -8,28 +8,36 @@
         Title="MainWindow" Height="350" Width="525"
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
-        >
+        MinWidth="340"
+        MinHeight="200">
 
-    <Grid x:Name="WindowGrid">
+    <Grid x:Name="WindowGrid" Background="#f4f4f4">
         <Grid x:Name="OuterGridPositioning" Margin="20,20,23.4,20.8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
             <!-- 
                                        >>>> Upper Search Style Section <<<<
             -->
-            <Grid x:Name="InnerStyle" Grid.Row="0" Margin="0,0,0,163.2" >
+            <Grid x:Name="InnerStyle" Grid.Row="0" Width="Auto" MinHeight="120" Margin="0,0,0,3" >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition MinWidth="100" MaxWidth="300"/>
+                    <ColumnDefinition MinWidth="4"  MaxWidth="30"/>
+                    <ColumnDefinition MinWidth="100" MaxWidth="300"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition MinHeight="100" MaxHeight="200"/>
                 </Grid.RowDefinitions>
 
                 <!-- Left Column -->
-                <Grid x:Name="KeyWordSearchSettings">
-                    <GroupBox>
+                <Grid x:Name="KeyWordSearchSettings" Grid.Column="0" Grid.Row="0">
+                    <GroupBox BorderBrush="Black">
                         <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="20"/>
                                 <RowDefinition/>
@@ -37,18 +45,18 @@
                                 <RowDefinition/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" VerticalAlignment="Top" Height="20" Padding="0,0,0,0" Content="Search options"/>
-                            <RadioButton x:Name="rbtnTrmup"   Grid.Row="1" VerticalAlignment="Center" Content="Trump"   Click="rbtn_Click" />
-                            <RadioButton x:Name="rbtnEconomy" Grid.Row="2" VerticalAlignment="Center" Content="Ekonomi" Click="rbtn_Click"/>
-                            <RadioButton x:Name="rbtnCop"     Grid.Row="3" VerticalAlignment="Center" Content="Polis"   Click="rbtn_Click"/>
-                            <RadioButton x:Name="rbtnSecret"  Grid.Row="4" VerticalAlignment="Center" Content="Hemlig"  Click="rbtn_Click"/>
+                            <Label Grid.Row="0" Height="20" Padding="0,2.5,0,0" HorizontalContentAlignment="Center" Content="Search options"/>
+                            <RadioButton x:Name="rbtnTrmup"   Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Content="Trump"   Click="rbtn_Click" />
+                            <RadioButton x:Name="rbtnEconomy" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Content="Ekonomi" Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnCop"     Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Content="Polis"   Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnSecret"  Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Content="Hemlig"  Click="rbtn_Click"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
 
                 <!-- Right Column -->
-                <Grid x:Name="SiteSearchSettings" Grid.Column="2">
-                    <GroupBox>
+                <Grid x:Name="SiteSearchSettings" Grid.Column="2" Grid.Row="2">
+                    <GroupBox BorderBrush="Black">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="20"/>
@@ -57,9 +65,9 @@
                                 <RowDefinition Height="1*"/>
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" VerticalAlignment="Top" Height="20" Padding="0,0,0,0" Content="Newspaper"/>
-                            <RadioButton x:Name="rbtnAftonbladet" Grid.Row="1" VerticalAlignment="Center" Content="Aftonbladet"    Click="rbtn_Click"/>
-                            <RadioButton x:Name="rbtnExpressen"   Grid.Row="2" VerticalAlignment="Center" Content="Expressen"      Click="rbtn_Click"/>
+                            <Label Grid.Row="0" Height="20" Padding="0,2.5,0,0"  HorizontalAlignment="Center" Content="Newspaper"/>
+                            <RadioButton x:Name="rbtnAftonbladet"     Grid.Row="1" VerticalAlignment="Center" Content="Aftonbladet"    Click="rbtn_Click"/>
+                            <RadioButton x:Name="rbtnExpressen"       Grid.Row="2" VerticalAlignment="Center" Content="Expressen"      Click="rbtn_Click"/>
                             <RadioButton x:Name="rbtnDagensNyheter"   Grid.Row="3" VerticalAlignment="Center" Content="Dagens Nyheter" Click="rbtn_Click"/>
                         </Grid>
                     </GroupBox>
@@ -69,25 +77,33 @@
             <!-- 
                                        >>>> Lower Style Section <<<<
             -->
-            <Grid Margin="10,121.4,10,10.2" d:LayoutOverrides="VerticalAlignment">
+            <Grid Width="auto" Height="auto" Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
                 <!-- Button Grid -->
                 <Grid x:Name="NavBar" Width="Auto" Height="Auto" Grid.Row="0">
-                    <Button x:Name="btnStatitics" Width="Auto" Height="Auto" Content="Get Statisics"/>
-                </Grid>
-
-                <!-- Result Box Grid -->
-                <Grid x:Name="ResultBox" Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <Label x:Name="lblResult" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Result"/>
-                    <TextBox x:Name="txtResult" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="Auto" BorderThickness="1,1,0,0" BorderBrush="#000" Background="#CA944E" />
+                    <Button x:Name="btnStatitics" Width="Auto" Height="auto" MaxHeight="30" Content="Get Statisics" Click="btnStatitics_Click"/>
+                    <Grid x:Name="ResultBox" Height="69.9" Margin="0,0,0,-69.9" VerticalAlignment="Bottom">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="lblResult" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Result"/>
+                        <TextBox x:Name="txtResult" Grid.Row="1" 
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center" 
+                             BorderThickness="1,1,0,0" 
+                             BorderBrush="#000" 
+                             Background="#CA944E" 
+                             TextChanged="txtResult_TextChanged"
+                             TextInput="txtResult_TextInput"/>
+                        <StatusBar Grid.Row="2"/>
+                        <Label x:Name="lblStatusBarNr" Grid.Row="2" HorizontalContentAlignment="Center" Content="0%"/>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
